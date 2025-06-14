@@ -15,6 +15,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   dots_indicator: ^4.0.1
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
