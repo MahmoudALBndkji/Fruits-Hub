@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/constants/constants.dart';
 import 'package:fruits_hub/core/services/shared_preferences_singleton.dart';
-import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
+import 'package:fruits_hub/features/auth/presentation/views/signin_view.dart';
 import 'package:fruits_hub/features/on-boarding/presentation/views/on_boarding_view.dart';
 import 'package:fruits_hub/features/splash/presentation/widgets/splash_view_body.dart';
 
@@ -35,7 +35,7 @@ class _SplashViewState extends State<SplashView> {
       Navigator.pushReplacementNamed(
           context,
           isOnBoardingViewSeen
-              ? LoginView.routeName
+              ? SignInView.routeName
               : OnBoardingView.routeName);
     });
   }
