@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/fruits_hub.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fruits_hub/firebase_options.dart';
+import 'package:fruits_hub/core/services/get_it_service.dart';
 import 'package:fruits_hub/core/services/shared_preferences_singleton.dart';
 
 void main() async {
@@ -10,5 +11,6 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await Prefs.init();
+  setupGetIt();
   runApp(const FruitsHub());
 }
