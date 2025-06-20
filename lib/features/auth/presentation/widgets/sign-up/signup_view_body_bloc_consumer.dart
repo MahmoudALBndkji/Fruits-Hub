@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/errors/build_error_bar.dart';
 import 'package:fruits_hub/features/auth/presentation/logic/signup-cubit/signup_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/sign-up/signup_view_body.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:fruits_hub/core/widgets/custom_progress_hud.dart';
 
 class SignupViewBodyBlocConsumer extends StatelessWidget {
   const SignupViewBodyBlocConsumer({super.key});
@@ -18,8 +18,8 @@ class SignupViewBodyBlocConsumer extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return ModalProgressHUD(
-          inAsyncCall: state is SignupLoading ? true : false,
+        return CustomProgressHud(
+          isLoading: state is SignupLoading,
           child: const SignupViewBody(),
         );
       },
