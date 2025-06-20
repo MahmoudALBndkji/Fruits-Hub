@@ -65,7 +65,9 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                 onPressed: () {
                   if (formKey.currentState?.validate() ?? false) {
                     formKey.currentState?.save();
-                    context.read<SigninCubit>().signin(email, password);
+                    context
+                        .read<SigninCubit>()
+                        .signInWithEmailAndPassword(email, password);
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                     setState(() {});
@@ -79,7 +81,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               const OrDivider(),
               const SizedBox(height: 16),
               SocialLoginButton(
-                onPressed: () => context.read<SigninCubit>().signinWithGoogle(),
+                onPressed: () => context.read<SigninCubit>().signInWithGoogle(),
                 image: Assets.imagesGoogleIcon,
                 title: 'تسجيل بواسطة جوجل',
               ),
@@ -99,9 +101,8 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                     )
                   : const SizedBox(),
               SocialLoginButton(
-                onPressed: () {
-                  // context.read<SigninCubit>().signinWithFacebook();
-                },
+                onPressed: () =>
+                    context.read<SigninCubit>().signInWithFacebook(),
                 image: Assets.imagesFacebookIcon,
                 title: 'تسجيل بواسطة فيسبوك',
               ),
