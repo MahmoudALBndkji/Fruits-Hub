@@ -1,11 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/constants/constants.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/custom_text_form_field.dart';
+import 'package:fruits_hub/features/auth/presentation/logic/signin-cubit/signin_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/sign-in/dont_have_account_widget.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/sign-in/or_divider.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/sign-in/password_field.dart';
@@ -61,9 +63,9 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               const SizedBox(height: 33),
               CustomButton(
                 onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    formKey.currentState!.save();
-                    // context.read<SigninCubit>().signin(email, password);
+                  if (formKey.currentState?.validate() ?? false) {
+                    formKey.currentState?.save();
+                    context.read<SigninCubit>().signin(email, password);
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                     setState(() {});
