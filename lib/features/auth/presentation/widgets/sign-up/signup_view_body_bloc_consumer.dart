@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/errors/build_error_bar.dart';
-import 'package:fruits_hub/features/auth/presentation/logic/signup-cubits/signup_cubit.dart';
+import 'package:fruits_hub/features/auth/presentation/logic/signup-cubit/signup_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/sign-up/signup_view_body.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
