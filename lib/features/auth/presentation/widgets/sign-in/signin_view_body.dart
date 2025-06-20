@@ -90,9 +90,8 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                   ? Column(
                       children: [
                         SocialLoginButton(
-                          onPressed: () {
-                            // context.read<SigninCubit>().signinWithApple();
-                          },
+                          onPressed: () =>
+                              context.read<SigninCubit>().signInWithApple(),
                           image: Assets.imagesApplIcon,
                           title: 'تسجيل بواسطة أبل',
                         ),
