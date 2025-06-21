@@ -144,4 +144,14 @@ class FirebaseAuthService {
     return (await FirebaseAuth.instance.signInWithCredential(oauthCredential))
         .user!;
   }
+
+  Future deleteUser() async {
+    try {
+      await FirebaseAuth.instance.currentUser?.delete();
+    } catch (e) {
+      log('Exception in FirebaseAuthService.deleteUser: ${e.toString()}');
+      throw CustomException(
+          message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.');
+    }
+  }
 }
