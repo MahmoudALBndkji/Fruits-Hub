@@ -19,11 +19,11 @@ class FireStoreService implements DatabaseService {
   @override
   Future<dynamic> getData({
     required String path,
-    String? docuementId,
+    String? documentId,
     Map<String, dynamic>? query,
   }) async {
-    if (docuementId != null) {
-      var data = await firestore.collection(path).doc(docuementId).get();
+    if (documentId != null) {
+      var data = await firestore.collection(path).doc(documentId).get();
       return data.data();
     } else {
       Query<Map<String, dynamic>> data = firestore.collection(path);
@@ -46,9 +46,9 @@ class FireStoreService implements DatabaseService {
   @override
   Future<bool> checkIfDataExists({
     required String path,
-    required String docuementId,
+    required String documentId,
   }) async {
-    var data = await firestore.collection(path).doc(docuementId).get();
+    var data = await firestore.collection(path).doc(documentId).get();
     return data.exists;
   }
 }
